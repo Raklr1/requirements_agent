@@ -1,0 +1,32 @@
+项目结构：
+requirements_agent/
+  app.py
+  config/
+    settings.yaml
+    rule_config.yaml
+  prompts/
+    system_prompt.txt
+    extract_requirements.txt
+    refine_requirements.txt
+    generate_srs.txt
+    generate_questions.txt
+  src/
+    models.py
+    orchestrator.py
+    parser.py
+    extractor.py
+    normalizer.py
+    validator.py
+    writer.py
+    memory.py
+    traceability.py
+    differ.py
+  inputs/
+    product_brief.md
+    prototype.md
+    constraints.yaml
+    feedback.md
+  outputs/
+  memory/
+  logs/
+  tests/
