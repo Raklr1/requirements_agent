@@ -1,0 +1,11 @@
+provider:
+  type: compatible
+  chat_completions_path: /chat/completions
+model:
+  name: qwen3.6-plus-2026-04-02
+  api_base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+  api_key_env: DASHSCOPE_API_KEY
+  timeout_seconds: 60
+  temperature: 0.2
+  max_tokens: 4000
+  top_p: 0.9

@@ -1,0 +1,1658 @@
+{
+  "project": {
+    "name": "校园活动策划与报名管理平台",
+    "version": "v1.0",
+    "status": "BASELINE_READY"
+  },
+  "functional_requirements": [
+    {
+      "id": "FR-001",
+      "title": "用户注册",
+      "description": "系统应支持用户注册，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户",
+        "活动负责人",
+        "管理员"
+      ],
+      "preconditions": [
+        "用户具备访问平台的基础条件"
+      ],
+      "main_flow": [
+        "进入注册页面",
+        "填写必要信息",
+        "提交注册表单",
+        "系统校验后创建账号"
+      ],
+      "alternate_flow": [
+        "若账号标识已存在，则系统提示不可重复注册"
+      ],
+      "postconditions": [
+        "用户账号被创建"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ],
+      "acceptance_ids": [
+        "AC-001"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-002",
+      "title": "用户登录",
+      "description": "系统应支持用户登录，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户",
+        "活动负责人",
+        "管理员"
+      ],
+      "preconditions": [
+        "用户已拥有有效账号"
+      ],
+      "main_flow": [
+        "进入登录页面",
+        "输入账号与密码",
+        "提交登录请求",
+        "系统验证身份并跳转"
+      ],
+      "alternate_flow": [
+        "若账号或密码错误，则系统给出明确错误提示"
+      ],
+      "postconditions": [
+        "用户进入与角色匹配的首页或工作台"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ],
+      "acceptance_ids": [
+        "AC-002"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-003",
+      "title": "用户退出登录",
+      "description": "系统应支持用户退出登录，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户",
+        "活动负责人",
+        "管理员"
+      ],
+      "preconditions": [
+        "用户当前处于已登录状态"
+      ],
+      "main_flow": [
+        "用户点击退出登录",
+        "系统清理当前会话",
+        "系统返回公共入口或登录页"
+      ],
+      "alternate_flow": [
+        "若会话已失效，则系统提示当前无需重复退出"
+      ],
+      "postconditions": [
+        "当前登录会话被安全结束"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ],
+      "acceptance_ids": [
+        "AC-003"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-004",
+      "title": "基于角色展示不同功能入口",
+      "description": "系统应支持基于角色展示不同功能入口，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "用户"
+      ],
+      "preconditions": [
+        "用户已进入对应功能入口"
+      ],
+      "main_flow": [
+        "用户进入对应功能入口",
+        "用户执行“基于角色展示不同功能入口”相关操作",
+        "系统完成处理并返回结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "系统完成“基于角色展示不同功能入口”相关处理"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ],
+      "acceptance_ids": [
+        "AC-004"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-005",
+      "title": "活动广场",
+      "description": "系统应支持活动广场，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户"
+      ],
+      "preconditions": [
+        "游客已进入对应功能入口"
+      ],
+      "main_flow": [
+        "游客进入对应功能入口",
+        "游客执行“活动广场”相关操作",
+        "系统完成处理并返回结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "系统完成“活动广场”相关处理"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ],
+      "acceptance_ids": [
+        "AC-005"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-006",
+      "title": "活动搜索",
+      "description": "系统应支持活动搜索，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户"
+      ],
+      "preconditions": [
+        "用户具备访问平台的基础条件"
+      ],
+      "main_flow": [
+        "游客进入活动广场或详情页",
+        "设置查询条件或查看内容",
+        "系统返回匹配结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "用户获得可查看的活动信息结果"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ],
+      "acceptance_ids": [
+        "AC-006"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-007",
+      "title": "按类型、时间、状态等条件筛选",
+      "description": "系统应支持按类型、时间、状态等条件筛选，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "游客",
+        "学生用户"
+      ],
+      "preconditions": [
+        "用户具备访问平台的基础条件"
+      ],
+      "main_flow": [
+        "游客进入活动广场或详情页",
+        "设置查询条件或查看内容",
+        "系统返回匹配结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "用户获得可查看的活动信息结果"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ],
+      "acceptance_ids": [
+        "AC-007"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-008",
+      "title": "活动详情查看",
+      "description": "系统应支持活动详情查看，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "用户"
+      ],
+      "preconditions": [
+        "用户已进入对应功能入口"
+      ],
+      "main_flow": [
+        "用户进入对应功能入口",
+        "用户执行“活动详情查看”相关操作",
+        "系统完成处理并返回结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "系统完成“活动详情查看”相关处理"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ],
+      "acceptance_ids": [
+        "AC-008"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-009",
+      "title": "在线报名活动",
+      "description": "系统应支持在线报名活动，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ],
+      "acceptance_ids": [
+        "AC-009"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-010",
+      "title": "查看报名结果",
+      "description": "系统应支持查看报名结果，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ],
+      "acceptance_ids": [
+        "AC-010"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-011",
+      "title": "查看个人已报名活动",
+      "description": "系统应支持查看个人已报名活动，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ],
+      "acceptance_ids": [
+        "AC-011"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-012",
+      "title": "在报名截止前取消报名",
+      "description": "系统应支持在报名截止前取消报名，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入个人中心或活动详情页",
+        "点击取消报名",
+        "系统校验是否允许取消",
+        "系统释放名额并更新状态"
+      ],
+      "alternate_flow": [
+        "若已超过可取消时间或状态不允许，则系统阻止取消并提示原因"
+      ],
+      "postconditions": [
+        "报名状态被取消，名额被释放"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ],
+      "acceptance_ids": [
+        "AC-012"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-013",
+      "title": "创建活动草稿",
+      "description": "系统应支持创建活动草稿，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "活动负责人"
+      ],
+      "preconditions": [
+        "活动负责人已登录"
+      ],
+      "main_flow": [
+        "进入活动编辑页",
+        "填写或修改活动信息",
+        "保存草稿或提交变更"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "活动草稿或活动信息被保存"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ],
+      "acceptance_ids": [
+        "AC-013"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-014",
+      "title": "编辑未结束活动的基础信息",
+      "description": "系统应支持编辑未结束活动的基础信息，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "活动负责人"
+      ],
+      "preconditions": [
+        "活动负责人已登录"
+      ],
+      "main_flow": [
+        "进入活动编辑页",
+        "填写或修改活动信息",
+        "保存草稿或提交变更"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "活动草稿或活动信息被保存"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ],
+      "acceptance_ids": [
+        "AC-014"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-015",
+      "title": "提交活动审核",
+      "description": "系统应支持提交活动审核，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ],
+      "acceptance_ids": [
+        "AC-015"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-016",
+      "title": "查看审核状态和审核意见",
+      "description": "系统应支持查看审核状态和审核意见，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "活动负责人"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ],
+      "acceptance_ids": [
+        "AC-016"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-017",
+      "title": "查看自己发起活动的报名名单与人数统计",
+      "description": "系统应支持查看自己发起活动的报名名单与人数统计，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ],
+      "acceptance_ids": [
+        "AC-017"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-018",
+      "title": "查看待审核活动列表",
+      "description": "系统应支持查看待审核活动列表，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ],
+      "acceptance_ids": [
+        "AC-018"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-019",
+      "title": "查看活动详情和关键字段",
+      "description": "系统应支持查看活动详情和关键字段，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已进入对应功能入口"
+      ],
+      "main_flow": [
+        "管理员进入对应功能入口",
+        "管理员执行“查看活动详情和关键字段”相关操作",
+        "系统完成处理并返回结果"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "系统完成“查看活动详情和关键字段”相关处理"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ],
+      "acceptance_ids": [
+        "AC-019"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-020",
+      "title": "审核通过",
+      "description": "系统应支持审核通过，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ],
+      "acceptance_ids": [
+        "AC-020"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-021",
+      "title": "审核驳回并填写驳回原因",
+      "description": "系统应支持审核驳回并填写驳回原因，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ],
+      "acceptance_ids": [
+        "AC-021"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-022",
+      "title": "查看已发布、已驳回、已下线活动",
+      "description": "系统应支持查看已发布、已驳回、已下线活动，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ],
+      "acceptance_ids": [
+        "AC-022"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-023",
+      "title": "平台活动数量统计",
+      "description": "系统应支持平台活动数量统计，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入后台统计页",
+        "系统汇总活动与报名数据",
+        "展示统计结果与最近记录"
+      ],
+      "alternate_flow": [
+        "若输入不合法或状态不允许，则系统给出提示并保留当前数据"
+      ],
+      "postconditions": [
+        "管理员可查看最新统计结果"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ],
+      "acceptance_ids": [
+        "AC-023"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-024",
+      "title": "报名人数统计",
+      "description": "系统应支持报名人数统计，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ],
+      "acceptance_ids": [
+        "AC-024"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-025",
+      "title": "最近审核记录",
+      "description": "系统应支持最近审核记录，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "管理员"
+      ],
+      "preconditions": [
+        "管理员已登录"
+      ],
+      "main_flow": [
+        "进入管理员审核中心",
+        "查看活动详情",
+        "执行审核决策",
+        "系统更新活动状态并记录结果"
+      ],
+      "alternate_flow": [
+        "若活动信息不完整，则系统阻止通过并要求补充原因或修改"
+      ],
+      "postconditions": [
+        "活动状态与审核记录被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ],
+      "acceptance_ids": [
+        "AC-025"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "FR-026",
+      "title": "最近报名记录",
+      "description": "系统应支持最近报名记录，并确保相关角色可按规范完成对应操作。",
+      "actors": [
+        "学生用户"
+      ],
+      "preconditions": [
+        "学生用户已登录",
+        "活动满足报名或取消报名条件"
+      ],
+      "main_flow": [
+        "进入活动详情页",
+        "点击报名",
+        "系统校验资格与名额",
+        "系统创建报名记录并反馈成功"
+      ],
+      "alternate_flow": [
+        "若活动已满员、已截止、未发布或重复报名，则系统阻止报名并给出原因"
+      ],
+      "postconditions": [
+        "报名记录被创建，活动已报名人数被更新"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ],
+      "acceptance_ids": [
+        "AC-026"
+      ],
+      "status": "proposed"
+    }
+  ],
+  "non_functional_requirements": [
+    {
+      "id": "NFR-001",
+      "category": "usability",
+      "title": "普通学生应能在较少步骤内完成“浏览 -> 查看详情 -> 报名”流程。",
+      "description": "系统应满足“普通学生应能在较少步骤内完成“浏览 -> 查看详情 -> 报名”流程。”对应的非功能目标。",
+      "metric": "flow_steps_minimized",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-1-易用性"
+      ]
+    },
+    {
+      "id": "NFR-002",
+      "category": "usability",
+      "title": "活动负责人应能明确看到活动当前状态和下一步可执行操作。",
+      "description": "系统应满足“活动负责人应能明确看到活动当前状态和下一步可执行操作。”对应的非功能目标。",
+      "metric": "flow_steps_minimized",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-1-易用性"
+      ]
+    },
+    {
+      "id": "NFR-003",
+      "category": "usability",
+      "title": "管理员应能快速识别待处理活动并完成审核。",
+      "description": "系统应满足“管理员应能快速识别待处理活动并完成审核。”对应的非功能目标。",
+      "metric": "flow_steps_minimized",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-1-易用性"
+      ]
+    },
+    {
+      "id": "NFR-004",
+      "category": "performance",
+      "title": "常用页面应在正常校园网络环境下较快加载。",
+      "description": "系统应满足“常用页面应在正常校园网络环境下较快加载。”对应的非功能目标。",
+      "metric": "metric_to_be_confirmed",
+      "scope": [
+        "首页",
+        "列表页",
+        "详情页"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-2-性能"
+      ]
+    },
+    {
+      "id": "NFR-005",
+      "category": "performance",
+      "title": "搜索、筛选、打开详情、提交表单等核心操作应具备可接受的响应速度。",
+      "description": "系统应满足“搜索、筛选、打开详情、提交表单等核心操作应具备可接受的响应速度。”对应的非功能目标。",
+      "metric": "metric_to_be_confirmed",
+      "scope": [
+        "首页",
+        "列表页",
+        "详情页"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-2-性能"
+      ]
+    },
+    {
+      "id": "NFR-006",
+      "category": "reliability",
+      "title": "对重复提交、超额报名、无权限操作、缺失字段等情况应给出明确反馈。",
+      "description": "系统应满足“对重复提交、超额报名、无权限操作、缺失字段等情况应给出明确反馈。”对应的非功能目标。",
+      "metric": "error_handling_defined",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-3-可靠性"
+      ]
+    },
+    {
+      "id": "NFR-007",
+      "category": "reliability",
+      "title": "关键操作应避免因重复点击造成重复数据。",
+      "description": "系统应满足“关键操作应避免因重复点击造成重复数据。”对应的非功能目标。",
+      "metric": "error_handling_defined",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-3-可靠性"
+      ]
+    },
+    {
+      "id": "NFR-008",
+      "category": "maintainability",
+      "title": "系统应具备清晰的模块边界。",
+      "description": "系统应满足“系统应具备清晰的模块边界。”对应的非功能目标。",
+      "metric": "module_boundaries_clear",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "medium",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-4-可维护性"
+      ]
+    },
+    {
+      "id": "NFR-009",
+      "category": "maintainability",
+      "title": "后续可扩展签到、消息通知、活动推荐、数据分析等能力。",
+      "description": "系统应满足“后续可扩展签到、消息通知、活动推荐、数据分析等能力。”对应的非功能目标。",
+      "metric": "module_boundaries_clear",
+      "scope": [
+        "全系统"
+      ],
+      "priority": "medium",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-11-非功能目标-11-4-可维护性"
+      ]
+    }
+  ],
+  "business_rules": [
+    {
+      "id": "BR-001",
+      "title": "游客只能浏览公开活动信息。",
+      "description": "游客只能浏览公开活动信息。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-1-角色与权限"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-002",
+      "title": "学生用户可以报名已发布活动，但不能审核活动。",
+      "description": "学生用户可以报名已发布活动，但不能审核活动。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-1-角色与权限"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-003",
+      "title": "活动负责人可以管理自己创建的活动，但不能审核自己的活动。",
+      "description": "活动负责人可以管理自己创建的活动，但不能审核自己的活动。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-1-角色与权限"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-004",
+      "title": "管理员可以审核和发布活动，但不能代替其他用户报名活动。",
+      "description": "管理员可以审核和发布活动，但不能代替其他用户报名活动。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-1-角色与权限"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-005",
+      "title": "`draft`：草稿，活动负责人可继续编辑。",
+      "description": "`draft`：草稿，活动负责人可继续编辑。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-006",
+      "title": "`pending_review`：已提交审核",
+      "description": "`pending_review`：已提交审核，等待管理员处理。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-007",
+      "title": "`rejected`：审核未通过",
+      "description": "`rejected`：审核未通过，活动负责人可查看驳回原因并修改后重新提交。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-008",
+      "title": "`published`：审核通过并对学生开放报名。",
+      "description": "`published`：审核通过并对学生开放报名。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-009",
+      "title": "`registration_closed`：活动仍保留展示",
+      "description": "`registration_closed`：活动仍保留展示，但不再允许报名。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-010",
+      "title": "`completed`：活动已结束。",
+      "description": "`completed`：活动已结束。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-011",
+      "title": "`cancelled`：活动被取消。",
+      "description": "`cancelled`：活动被取消。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-2-活动状态"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-012",
+      "title": "只有 `published` 状态的活动允许报名。",
+      "description": "只有 `published` 状态的活动允许报名。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-3-报名规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-013",
+      "title": "当活动报名人数达到上限时，系统不得再接受新的报名请求。",
+      "description": "当活动报名人数达到上限时，系统不得再接受新的报名请求。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-3-报名规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-014",
+      "title": "同一学生不能重复报名同一活动。",
+      "description": "同一学生不能重复报名同一活动。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-3-报名规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-015",
+      "title": "学生在活动报名截止前可以取消报名，取消后名额应释放。",
+      "description": "学生在活动报名截止前可以取消报名，取消后名额应释放。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-3-报名规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-016",
+      "title": "已结束、已取消、未发布的活动不能报名。",
+      "description": "已结束、已取消、未发布的活动不能报名。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-3-报名规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-017",
+      "title": "活动名称",
+      "description": "活动名称",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-018",
+      "title": "活动类型",
+      "description": "活动类型",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-019",
+      "title": "活动简介",
+      "description": "活动简介",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-020",
+      "title": "主办方",
+      "description": "主办方",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-021",
+      "title": "活动地点",
+      "description": "活动地点",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-022",
+      "title": "活动开始时间",
+      "description": "活动开始时间",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-023",
+      "title": "活动结束时间",
+      "description": "活动结束时间",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-024",
+      "title": "报名截止时间",
+      "description": "报名截止时间",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-025",
+      "title": "人数上限",
+      "description": "人数上限",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-026",
+      "title": "面向对象/参与范围",
+      "description": "面向对象/参与范围",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-4-活动信息完整性"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-027",
+      "title": "信息不完整的活动不能审核通过。",
+      "description": "信息不完整的活动不能审核通过。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-5-审核规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-028",
+      "title": "管理员驳回活动时必须填写驳回原因。",
+      "description": "管理员驳回活动时必须填写驳回原因。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-5-审核规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-029",
+      "title": "已审核通过的活动如需修改关键字段，应重新进入审核流程。",
+      "description": "已审核通过的活动如需修改关键字段，应重新进入审核流程。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-5-审核规则"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "BR-030",
+      "title": "审核记录应保留审核人、审核时间、审核结论和说明。",
+      "description": "审核记录应保留审核人、审核时间、审核结论和说明。",
+      "priority": "high",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-8-关键业务规则-8-5-审核规则"
+      ],
+      "status": "proposed"
+    }
+  ],
+  "edge_cases": [
+    {
+      "id": "EC-001",
+      "title": "游客尝试报名",
+      "description": "游客尝试报名",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-002",
+      "title": "用户重复报名同一活动",
+      "description": "用户重复报名同一活动",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-003",
+      "title": "活动满员后继续报名",
+      "description": "活动满员后继续报名",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-004",
+      "title": "报名截止后继续报名",
+      "description": "报名截止后继续报名",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-005",
+      "title": "非管理员访问审核中心",
+      "description": "非管理员访问审核中心",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-006",
+      "title": "活动负责人提交信息不完整的活动",
+      "description": "活动负责人提交信息不完整的活动",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-007",
+      "title": "管理员驳回活动",
+      "description": "管理员驳回活动",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-008",
+      "title": "学生取消已报名活动",
+      "description": "学生取消已报名活动",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-009",
+      "title": "已发布活动修改关键字段",
+      "description": "已发布活动修改关键字段",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    },
+    {
+      "id": "EC-010",
+      "title": "活动被取消后学生查看详情",
+      "description": "活动被取消后学生查看详情",
+      "related_requirement_ids": [],
+      "source": [
+        "prototype:校园活动策划与报名管理平台-prototype-notes-8-异常与边界场景"
+      ],
+      "status": "proposed"
+    }
+  ],
+  "acceptance_criteria": [
+    {
+      "id": "AC-001",
+      "requirement_id": "FR-001",
+      "scenario": "用户注册",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“用户注册”对应的主要操作",
+      "then": "用户账号被创建",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ]
+    },
+    {
+      "id": "AC-002",
+      "requirement_id": "FR-002",
+      "scenario": "用户登录",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“用户登录”对应的主要操作",
+      "then": "用户进入与角色匹配的首页或工作台",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ]
+    },
+    {
+      "id": "AC-003",
+      "requirement_id": "FR-003",
+      "scenario": "用户退出登录",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“用户退出登录”对应的主要操作",
+      "then": "当前登录会话被安全结束",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ]
+    },
+    {
+      "id": "AC-004",
+      "requirement_id": "FR-004",
+      "scenario": "基于角色展示不同功能入口",
+      "given": "用户满足前置条件并进入相关功能页面",
+      "when": "用户执行“基于角色展示不同功能入口”对应的主要操作",
+      "then": "系统完成“基于角色展示不同功能入口”相关处理",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+      ]
+    },
+    {
+      "id": "AC-005",
+      "requirement_id": "FR-005",
+      "scenario": "活动广场",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“活动广场”对应的主要操作",
+      "then": "系统完成“活动广场”相关处理",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ]
+    },
+    {
+      "id": "AC-006",
+      "requirement_id": "FR-006",
+      "scenario": "活动搜索",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“活动搜索”对应的主要操作",
+      "then": "用户获得可查看的活动信息结果",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ]
+    },
+    {
+      "id": "AC-007",
+      "requirement_id": "FR-007",
+      "scenario": "按类型、时间、状态等条件筛选",
+      "given": "游客满足前置条件并进入相关功能页面",
+      "when": "游客执行“按类型、时间、状态等条件筛选”对应的主要操作",
+      "then": "用户获得可查看的活动信息结果",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ]
+    },
+    {
+      "id": "AC-008",
+      "requirement_id": "FR-008",
+      "scenario": "活动详情查看",
+      "given": "用户满足前置条件并进入相关功能页面",
+      "when": "用户执行“活动详情查看”对应的主要操作",
+      "then": "系统完成“活动详情查看”相关处理",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+      ]
+    },
+    {
+      "id": "AC-009",
+      "requirement_id": "FR-009",
+      "scenario": "在线报名活动",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“在线报名活动”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ]
+    },
+    {
+      "id": "AC-010",
+      "requirement_id": "FR-010",
+      "scenario": "查看报名结果",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“查看报名结果”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ]
+    },
+    {
+      "id": "AC-011",
+      "requirement_id": "FR-011",
+      "scenario": "查看个人已报名活动",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“查看个人已报名活动”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ]
+    },
+    {
+      "id": "AC-012",
+      "requirement_id": "FR-012",
+      "scenario": "在报名截止前取消报名",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“在报名截止前取消报名”对应的主要操作",
+      "then": "报名状态被取消，名额被释放",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+      ]
+    },
+    {
+      "id": "AC-013",
+      "requirement_id": "FR-013",
+      "scenario": "创建活动草稿",
+      "given": "活动负责人满足前置条件并进入相关功能页面",
+      "when": "活动负责人执行“创建活动草稿”对应的主要操作",
+      "then": "活动草稿或活动信息被保存",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ]
+    },
+    {
+      "id": "AC-014",
+      "requirement_id": "FR-014",
+      "scenario": "编辑未结束活动的基础信息",
+      "given": "活动负责人满足前置条件并进入相关功能页面",
+      "when": "活动负责人执行“编辑未结束活动的基础信息”对应的主要操作",
+      "then": "活动草稿或活动信息被保存",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ]
+    },
+    {
+      "id": "AC-015",
+      "requirement_id": "FR-015",
+      "scenario": "提交活动审核",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“提交活动审核”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ]
+    },
+    {
+      "id": "AC-016",
+      "requirement_id": "FR-016",
+      "scenario": "查看审核状态和审核意见",
+      "given": "活动负责人满足前置条件并进入相关功能页面",
+      "when": "活动负责人执行“查看审核状态和审核意见”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ]
+    },
+    {
+      "id": "AC-017",
+      "requirement_id": "FR-017",
+      "scenario": "查看自己发起活动的报名名单与人数统计",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“查看自己发起活动的报名名单与人数统计”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+      ]
+    },
+    {
+      "id": "AC-018",
+      "requirement_id": "FR-018",
+      "scenario": "查看待审核活动列表",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“查看待审核活动列表”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ]
+    },
+    {
+      "id": "AC-019",
+      "requirement_id": "FR-019",
+      "scenario": "查看活动详情和关键字段",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“查看活动详情和关键字段”对应的主要操作",
+      "then": "系统完成“查看活动详情和关键字段”相关处理",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ]
+    },
+    {
+      "id": "AC-020",
+      "requirement_id": "FR-020",
+      "scenario": "审核通过",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“审核通过”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ]
+    },
+    {
+      "id": "AC-021",
+      "requirement_id": "FR-021",
+      "scenario": "审核驳回并填写驳回原因",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“审核驳回并填写驳回原因”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ]
+    },
+    {
+      "id": "AC-022",
+      "requirement_id": "FR-022",
+      "scenario": "查看已发布、已驳回、已下线活动",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“查看已发布、已驳回、已下线活动”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+      ]
+    },
+    {
+      "id": "AC-023",
+      "requirement_id": "FR-023",
+      "scenario": "平台活动数量统计",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“平台活动数量统计”对应的主要操作",
+      "then": "管理员可查看最新统计结果",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ]
+    },
+    {
+      "id": "AC-024",
+      "requirement_id": "FR-024",
+      "scenario": "报名人数统计",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“报名人数统计”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ]
+    },
+    {
+      "id": "AC-025",
+      "requirement_id": "FR-025",
+      "scenario": "最近审核记录",
+      "given": "管理员满足前置条件并进入相关功能页面",
+      "when": "管理员执行“最近审核记录”对应的主要操作",
+      "then": "活动状态与审核记录被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ]
+    },
+    {
+      "id": "AC-026",
+      "requirement_id": "FR-026",
+      "scenario": "最近报名记录",
+      "given": "学生用户满足前置条件并进入相关功能页面",
+      "when": "学生用户执行“最近报名记录”对应的主要操作",
+      "then": "报名记录被创建，活动已报名人数被更新",
+      "source": [
+        "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+      ]
+    }
+  ],
+  "open_questions": [
+    {
+      "question_id": "Q-CONSTRAINT-001",
+      "question": "是否有需要明确写入需求基线的课程、时间或技术约束？",
+      "reason": "约束条件会影响可实现性判断和非功能需求边界。",
+      "default_option": "若未提供，则默认按照课程项目范围与现有 Web 平台定位处理。",
+      "blocking": false
+    }
+  ],
+  "assumptions": []
+}

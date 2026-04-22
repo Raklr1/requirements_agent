@@ -1,0 +1,20 @@
+ambiguity_terms:
+  - 友好
+  - 智能
+  - 尽量快
+  - 高效
+  - 简洁
+  - 支持多种
+  - 合理
+blocking_issue_categories:
+  - consistency
+  - reference_integrity
+  - traceability
+warning_issue_categories:
+  - ambiguity
+  - feasibility
+severity_order:
+  - critical
+  - high
+  - medium
+  - low

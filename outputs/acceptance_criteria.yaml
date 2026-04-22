@@ -1,0 +1,234 @@
+-
+  id: AC-001
+  requirement_id: FR-001
+  scenario: 用户注册
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“用户注册”对应的主要操作
+  then: 用户账号被创建
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+-
+  id: AC-002
+  requirement_id: FR-002
+  scenario: 用户登录
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“用户登录”对应的主要操作
+  then: 用户进入与角色匹配的首页或工作台
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+-
+  id: AC-003
+  requirement_id: FR-003
+  scenario: 用户退出登录
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“用户退出登录”对应的主要操作
+  then: 当前登录会话被安全结束
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+-
+  id: AC-004
+  requirement_id: FR-004
+  scenario: 基于角色展示不同功能入口
+  given: 用户满足前置条件并进入相关功能页面
+  when: 用户执行“基于角色展示不同功能入口”对应的主要操作
+  then: 系统完成“基于角色展示不同功能入口”相关处理
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-a-账户与身份"
+-
+  id: AC-005
+  requirement_id: FR-005
+  scenario: 活动广场
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“活动广场”对应的主要操作
+  then: 系统完成“活动广场”相关处理
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+-
+  id: AC-006
+  requirement_id: FR-006
+  scenario: 活动搜索
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“活动搜索”对应的主要操作
+  then: 用户获得可查看的活动信息结果
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+-
+  id: AC-007
+  requirement_id: FR-007
+  scenario: 按类型、时间、状态等条件筛选
+  given: 游客满足前置条件并进入相关功能页面
+  when: 游客执行“按类型、时间、状态等条件筛选”对应的主要操作
+  then: 用户获得可查看的活动信息结果
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+-
+  id: AC-008
+  requirement_id: FR-008
+  scenario: 活动详情查看
+  given: 用户满足前置条件并进入相关功能页面
+  when: 用户执行“活动详情查看”对应的主要操作
+  then: 系统完成“活动详情查看”相关处理
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-b-活动浏览与发现"
+-
+  id: AC-009
+  requirement_id: FR-009
+  scenario: 在线报名活动
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“在线报名活动”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+-
+  id: AC-010
+  requirement_id: FR-010
+  scenario: 查看报名结果
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“查看报名结果”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+-
+  id: AC-011
+  requirement_id: FR-011
+  scenario: 查看个人已报名活动
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“查看个人已报名活动”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+-
+  id: AC-012
+  requirement_id: FR-012
+  scenario: 在报名截止前取消报名
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“在报名截止前取消报名”对应的主要操作
+  then: 报名状态被取消，名额被释放
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-c-学生报名"
+-
+  id: AC-013
+  requirement_id: FR-013
+  scenario: 创建活动草稿
+  given: 活动负责人满足前置条件并进入相关功能页面
+  when: 活动负责人执行“创建活动草稿”对应的主要操作
+  then: 活动草稿或活动信息被保存
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+-
+  id: AC-014
+  requirement_id: FR-014
+  scenario: 编辑未结束活动的基础信息
+  given: 活动负责人满足前置条件并进入相关功能页面
+  when: 活动负责人执行“编辑未结束活动的基础信息”对应的主要操作
+  then: 活动草稿或活动信息被保存
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+-
+  id: AC-015
+  requirement_id: FR-015
+  scenario: 提交活动审核
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“提交活动审核”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+-
+  id: AC-016
+  requirement_id: FR-016
+  scenario: 查看审核状态和审核意见
+  given: 活动负责人满足前置条件并进入相关功能页面
+  when: 活动负责人执行“查看审核状态和审核意见”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+-
+  id: AC-017
+  requirement_id: FR-017
+  scenario: 查看自己发起活动的报名名单与人数统计
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“查看自己发起活动的报名名单与人数统计”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-d-活动负责人工作台"
+-
+  id: AC-018
+  requirement_id: FR-018
+  scenario: 查看待审核活动列表
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“查看待审核活动列表”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+-
+  id: AC-019
+  requirement_id: FR-019
+  scenario: 查看活动详情和关键字段
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“查看活动详情和关键字段”对应的主要操作
+  then: 系统完成“查看活动详情和关键字段”相关处理
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+-
+  id: AC-020
+  requirement_id: FR-020
+  scenario: 审核通过
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“审核通过”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+-
+  id: AC-021
+  requirement_id: FR-021
+  scenario: 审核驳回并填写驳回原因
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“审核驳回并填写驳回原因”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+-
+  id: AC-022
+  requirement_id: FR-022
+  scenario: 查看已发布、已驳回、已下线活动
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“查看已发布、已驳回、已下线活动”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-e-管理员审核与发布"
+-
+  id: AC-023
+  requirement_id: FR-023
+  scenario: 平台活动数量统计
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“平台活动数量统计”对应的主要操作
+  then: 管理员可查看最新统计结果
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+-
+  id: AC-024
+  requirement_id: FR-024
+  scenario: 报名人数统计
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“报名人数统计”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+-
+  id: AC-025
+  requirement_id: FR-025
+  scenario: 最近审核记录
+  given: 管理员满足前置条件并进入相关功能页面
+  when: 管理员执行“最近审核记录”对应的主要操作
+  then: 活动状态与审核记录被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"
+-
+  id: AC-026
+  requirement_id: FR-026
+  scenario: 最近报名记录
+  given: 学生用户满足前置条件并进入相关功能页面
+  when: 学生用户执行“最近报名记录”对应的主要操作
+  then: 报名记录被创建，活动已报名人数被更新
+  source:
+    - "brief:校园活动策划与报名管理平台-product-brief-7-功能范围-7-1-本期必须覆盖的功能范围-f-统计与记录"

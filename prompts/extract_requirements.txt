@@ -1,0 +1,19 @@
+请基于下面的项目上下文，提取结构化需求草稿。
+
+输出 JSON 顶层字段必须包含：
+- functional_requirements
+- non_functional_requirements
+- business_rules
+- edge_cases
+- acceptance_criteria
+- open_questions
+- assumptions
+
+其中：
+- functional_requirements 中每项尽量包含 title, description, actors, preconditions, main_flow, alternate_flow, postconditions, priority, source, status
+- non_functional_requirements 中每项尽量包含 category, title, description, metric, scope, priority, source
+- acceptance_criteria 中每项尽量包含 requirement_id 或 linked_requirement_title, scenario, given, when, then
+- open_questions 中每项包含 question_id, question, reason, default_option, blocking
+
+项目上下文：
+{{CONTEXT_JSON}}

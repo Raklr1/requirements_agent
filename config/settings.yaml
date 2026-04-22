@@ -1,0 +1,12 @@
+runtime:
+  input_dir: inputs
+  output_dir: outputs
+  memory_dir: memory
+  prompt_dir: prompts
+  log_dir: logs
+  allow_rule_based_fallback: true
+  use_llm_for_srs: false
+  status_on_blocking_question: DRAFT_READY
+project:
+  default_author: Requirements Agent
+  version_when_draft: v0.1
