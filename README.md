@@ -82,13 +82,21 @@ requirements_agent/
 在仓库根目录执行：
 
 ```powershell
-python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent
+python requirements_agent/app.py
+```
+
+默认情况下，程序会自动使用 `requirements_agent/` 作为包根目录。
+
+`--base-dir` 是可选参数。需要从其他工作目录运行，或需要显式指定项目根目录时，可以使用：
+
+```powershell
+python requirements_agent/app.py --base-dir .
 ```
 
 按需覆盖输入输出目录：
 
 ```powershell
-python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent --input-dir D:/path/to/inputs --output-dir D:/path/to/outputs
+python requirements_agent/app.py --base-dir . --input-dir D:/path/to/inputs --output-dir D:/path/to/outputs
 ```
 
 运行结束后，命令行会打印本次状态，例如：
