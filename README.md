@@ -2,31 +2,28 @@
 
 ## 简介
 
-`Requirements Agent` 用于把产品说明、原型、约束和反馈等上游输入，转化为结构化、可检查、可追踪、可交付的需求基线文档。
+`Requirements Agent` 是当前仓库中已经实现的需求分析 Agent。它读取产品说明和原型说明，结合可选约束与反馈，生成结构化需求基线和质量检查工件。
 
-它在整体流程中的位置为：
-
-`软件主题/产品方向确认 -> Requirements Agent -> 设计 Agent / 开发 Agent / 测试 Agent`
-
-## 目标
-
-- 将模糊的软件想法整理为标准化需求规格说明
-- 输出后续 Agent 可直接消费的结构化工件
-- 自动检查需求完整性、一致性、可测试性和来源完整性
-- 对缺失信息和歧义生成待确认问题
-- 维护需求追踪关系、变更记录和项目记忆
+当前实现目标是让需求分析流程可运行、可检查、可追踪。
 
 ## 当前已实现能力
 
-- 读取 `inputs/product_brief.md`、`inputs/prototype.md`
-- 可选读取 `constraints.yaml`、`feedback.md`
-- 统一模型配置与 Provider 抽象
-- LLM 抽取与规则兜底双路径运行
-- 功能需求、非功能需求、业务规则、边界场景、验收标准归一化编号
-- 生成 `SRS.md`、`requirements.json`、`acceptance_criteria.yaml`
-- 生成 `open_questions.md`、`review_report.md`
-- 生成 `traceability.csv`、`change_log.md`
-- 持久化 `memory/project_memory.json`
+- 读取 `inputs/product_brief.md`。
+- 读取 `inputs/prototype.md`。
+- 可选读取 `inputs/constraints.yaml`。
+- 可选读取 `inputs/feedback.md`。
+- 解析 Markdown 章节并建立来源映射。
+- 生成 `ProjectContext`。
+- 通过配置文件加载运行目录、模型参数和检查规则。
+- 通过 `LLMClient` 屏蔽模型 Provider 细节。
+- 支持 `compatible` 与 `openai` 两类 Provider 配置。
+- 支持 LLM 抽取需求草稿。
+- 支持规则化兜底抽取，保证无 API Key 或模型不可用时主流程仍可运行。
+- 生成功能需求、非功能需求、业务规则、边界场景、验收标准和待确认问题。
+- 归一化需求字段和编号。
+- 复用上一版 baseline 的稳定 ID。
+- 进行完整性、一致性、歧义、可测试性、来源完整性检查。
+- 生成追踪矩阵、变更日志和项目记忆。
 
 ## 目录结构
 
@@ -35,34 +32,39 @@ requirements_agent/
 ├─ app.py
 ├─ README.md
 ├─ config/
+│  ├─ settings.yaml
 │  ├─ model_config.yaml
-│  ├─ rule_config.yaml
-│  └─ settings.yaml
+│  └─ rule_config.yaml
 ├─ inputs/
-├─ logs/
+│  ├─ product_brief.md
+│  └─ prototype.md
 ├─ memory/
+│  └─ project_memory.json
 ├─ outputs/
+│  ├─ SRS.md
+│  ├─ requirements.json
+│  ├─ acceptance_criteria.yaml
+│  ├─ open_questions.md
+│  ├─ review_report.md
+│  ├─ traceability.csv
+│  └─ change_log.md
 ├─ prompts/
 │  ├─ extract_requirements.txt
-│  ├─ generate_questions.txt
-│  ├─ generate_srs.txt
-│  ├─ refine_requirements.txt
 │  └─ system_prompt.txt
-├─ src/
-│  ├─ config.py
-│  ├─ differ.py
-│  ├─ extractor.py
-│  ├─ llm_client.py
-│  ├─ memory.py
-│  ├─ models.py
-│  ├─ normalizer.py
-│  ├─ orchestrator.py
-│  ├─ parser.py
-│  ├─ traceability.py
-│  ├─ validator.py
-│  ├─ writer.py
-│  └─ providers/
-└─ tests/
+└─ src/
+   ├─ config.py
+   ├─ differ.py
+   ├─ extractor.py
+   ├─ llm_client.py
+   ├─ memory.py
+   ├─ models.py
+   ├─ normalizer.py
+   ├─ orchestrator.py
+   ├─ parser.py
+   ├─ traceability.py
+   ├─ validator.py
+   ├─ writer.py
+   └─ providers/
 ```
 
 ## 环境要求
@@ -72,23 +74,8 @@ requirements_agent/
 
 说明：
 
-- 若已配置可用 API Key，则优先走 LLM 抽取链路。
-- 若未配置或调用失败，则回退到规则化抽取逻辑，保证流程可运行。
-
-## 配置
-
-配置文件位于 `config/`：
-
-- `settings.yaml`：目录、运行开关、输出行为
-- `model_config.yaml`：模型提供方、Base URL、模型名、超参数、API Key 环境变量名
-- `rule_config.yaml`：歧义词、严重级别、检查规则相关配置
-
-当前默认模型配置：
-
-- Provider Type: `compatible`
-- Base URL: `https://dashscope.aliyuncs.com/compatible-mode/v1`
-- Model Name: `qwen3.6-plus-2026-04-02`
-- API Key Env: `DASHSCOPE_API_KEY`
+- 配置了可用 API Key 时，优先走 LLM 抽取链路。
+- 未配置 API Key 或模型调用失败时，会走规则化兜底抽取链路。
 
 ## 运行方式
 
@@ -98,15 +85,25 @@ requirements_agent/
 python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent
 ```
 
-也可以按需覆盖输入输出目录：
+按需覆盖输入输出目录：
 
 ```powershell
 python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent --input-dir D:/path/to/inputs --output-dir D:/path/to/outputs
 ```
 
-## 输入说明
+运行结束后，命令行会打印本次状态，例如：
 
-输入目录默认是 `requirements_agent/inputs/`。
+```text
+BASELINE_READY
+```
+
+## 输入
+
+默认输入目录：
+
+```text
+requirements_agent/inputs/
+```
 
 必需输入：
 
@@ -117,15 +114,18 @@ python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent --input-dir
 
 - `constraints.yaml`
 - `feedback.md`
-- `history/`
 
-若缺少必需输入，运行状态会直接返回 `BLOCKED`。
+若缺少必需输入，运行状态为 `BLOCKED`。
 
-## 输出说明
+## 输出
 
-输出目录默认是 `requirements_agent/outputs/`。
+默认输出目录：
 
-当前会生成：
+```text
+requirements_agent/outputs/
+```
+
+当前生成：
 
 - `SRS.md`
 - `requirements.json`
@@ -135,27 +135,68 @@ python requirements_agent/app.py --base-dir D:/Desktop/Chatgpt/agent --input-dir
 - `traceability.csv`
 - `change_log.md`
 
-Memory 文件：
+项目记忆：
 
 - `memory/project_memory.json`
 
+## 配置
+
+配置文件位于 `config/`。
+
+- `settings.yaml`：运行目录、兜底开关、草稿版本。
+- `model_config.yaml`：Provider、模型名、Base URL、API Key 环境变量、超参数。
+- `rule_config.yaml`：歧义词、问题类别、严重级别。
+
+当前默认模型配置：
+
+- Provider Type: `compatible`
+- Base URL: `https://dashscope.aliyuncs.com/compatible-mode/v1`
+- Model Name: `qwen3.6-plus-2026-04-02`
+- API Key Env: `DASHSCOPE_API_KEY`
+
+## 主流程
+
+```text
+app.py
+-> load_app_config()
+-> run_requirements_agent()
+-> load_project_context()
+-> load_memory()
+-> extract_requirement_candidates()
+-> normalize_requirements()
+-> validate_requirements()
+-> diff_requirement_sets()
+-> resolve_next_version()
+-> write_outputs()
+-> update_memory()
+-> save_memory()
+```
+
 ## 运行状态
 
-每次运行会返回以下状态之一：
+当前代码会返回以下状态之一：
 
-- `DRAFT_READY`
-- `BASELINE_READY`
-- `BLOCKED`
-- `REVISION_REQUIRED`
+- `BLOCKED`：缺少关键输入。
+- `DRAFT_READY`：已生成草稿，但存在阻塞型待确认问题。
+- `REVISION_REQUIRED`：存在 critical 或 high 级别问题。
+- `BASELINE_READY`：需求通过当前检查，可作为基线输出。
 
-## 当前限制
+## 当前样例输出
 
-- `inputs/history/` 的历史版本增量比较尚未补齐
-- 自动 refine 回路尚未实现
-- 更细的可实现性检查、编号引用检查、追踪关系检查仍待补充
-- 单元测试与回归测试尚未建立
+当前样例输出为：
+
+- Project: `校园活动策划与报名管理平台`
+- Version: `v1.0`
+- Status: `BASELINE_READY`
+- Functional Requirements: `26`
+- Non-functional Requirements: `9`
+- Business Rules: `30`
+- Edge Cases: `10`
+- Acceptance Criteria: `26`
+- Open Questions: `1`
 
 ## 相关文档
 
-- 上层实现需求说明：[`../requirements.md`](../requirements.md)
-- 当前实现进度：[`../agentwork.md`](../agentwork.md)
+- 根说明：[`../README.md`](../README.md)
+- 当前实现规格：[`../requirements.md`](../requirements.md)
+- 实现进度：[`../agentwork.md`](../agentwork.md)

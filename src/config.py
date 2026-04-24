@@ -18,7 +18,6 @@ class RuntimeSettings:
     output_dir: Path
     memory_dir: Path
     prompt_dir: Path
-    log_dir: Path
     allow_rule_based_fallback: bool = True
     use_llm_for_srs: bool = False
     status_on_blocking_question: str = "DRAFT_READY"
@@ -69,7 +68,6 @@ class AppConfig:
             self.runtime.output_dir,
             self.runtime.memory_dir,
             self.runtime.prompt_dir,
-            self.runtime.log_dir,
         ):
             directory.mkdir(parents=True, exist_ok=True)
 
@@ -92,7 +90,6 @@ def load_app_config(base_dir: str | Path | None = None) -> AppConfig:
         output_dir=_resolve_subpath(package_root, runtime_section.get("output_dir", "outputs")),
         memory_dir=_resolve_subpath(package_root, runtime_section.get("memory_dir", "memory")),
         prompt_dir=_resolve_subpath(package_root, runtime_section.get("prompt_dir", "prompts")),
-        log_dir=_resolve_subpath(package_root, runtime_section.get("log_dir", "logs")),
         allow_rule_based_fallback=bool(runtime_section.get("allow_rule_based_fallback", True)),
         use_llm_for_srs=bool(runtime_section.get("use_llm_for_srs", False)),
         status_on_blocking_question=str(runtime_section.get("status_on_blocking_question", "DRAFT_READY")),
